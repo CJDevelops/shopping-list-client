@@ -28,7 +28,9 @@ function App() {
     
     const savedColor = Cookies.get('bgColor') || '#212529';
     document.body.style.backgroundColor = savedColor;
-    document.documentElement.style.setProperty('--bs-table-bg', savedColor);
+    const tableElement = document.querySelector('.main-table'); 
+    tableElement.classList.add('custom-table-bg'); 
+    document.documentElement.style.setProperty('--custom-bg-color', newColor);
   }, []);
 
   const handleColorChange = (e) => {
