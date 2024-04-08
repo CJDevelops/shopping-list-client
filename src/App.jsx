@@ -9,6 +9,7 @@ import Entry from './Components/Entry';
 
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
+import Stack from 'react-bootstrap/Stack';
 import Form from 'react-bootstrap/Form';
 
 function App() {
@@ -27,13 +28,10 @@ function App() {
   return (
     <>
       <Container>
-      <Form.Control
-        type="color"
-        id="exampleColorInput"
-        defaultValue="#563d7c"
-        title="Choose your color"
-      />
-        <h1 className="text-center">Shopping List 🛒</h1>
+        <Stack direction="horizontal" gap={3}>
+          <Form.Control type="color" id="exampleColorInput" defaultValue="#563d7c" title="Choose your color" />
+          <h1 className="text-center">Shopping List 🛒</h1>
+        </Stack>
         <Table borderless className="text-center align-middle">
           <tbody>
             {data.map(item => (
