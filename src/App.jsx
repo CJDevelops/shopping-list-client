@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
+import Cookies from 'js-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css';
@@ -14,6 +15,7 @@ import Form from 'react-bootstrap/Form';
 
 function App() {
   const [data, setData] = useState([]);
+  const [bgColor, setBgColor] = useState(() => Cookies.get('bgColor') || '#212529');
 
   const fetchData = async () => {
     const response = await axios.get('/api/shopping');
@@ -25,13 +27,19 @@ function App() {
     fetchData();
   }, []);
 
+  const handleColorChange = (e) => {
+    const newColor = e.target.value;
+    setBgColor(newColor);
+    Cookies.set('bgColor', newColor);
+  };
+
   return (
     <>
       <Container>
         <Stack direction="horizontal" gap={3} style={{ display: 'flex' }}>
 
           <h1 className="text-center" style={{ flexGrow: 1 }}>Shopping List 🛒</h1>
-          <Form.Control className='ms-auto' type="color" id="exampleColorInput" defaultValue="#563d7c" title="Choose your color" />
+          <Form.Control className='ms-auto' type="color" id="exampleColorInput" defaultValue={bgColor} title="Choose your color" onChange={handleColorChange} />
           
         </Stack>
         <Table borderless className="text-center align-middle">
