@@ -58,7 +58,7 @@ function App() {
           
         </Stack>
         <Table borderless className="main-table text-center align-middle">
-          <tbody>
+          <tbody className='.main-table'>
             {data.map(item => (
               <Entry key={item.item_id} item_id={item.item_id} item_name={item.item_name} purchased={item.purchased} fetchData={fetchData} />
             ))}
