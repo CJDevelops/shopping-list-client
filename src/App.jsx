@@ -29,9 +29,9 @@ function App() {
     <>
       <Container>
         <Stack direction="horizontal" gap={3}>
-          
+
           <h1 className="text-center">Shopping List 🛒</h1>
-          <Form.Control type="color" id="exampleColorInput" defaultValue="#563d7c" title="Choose your color" />
+          <Form.Control className='ms-auto' type="color" id="exampleColorInput" defaultValue="#563d7c" title="Choose your color" />
           
         </Stack>
         <Table borderless className="text-center align-middle">
