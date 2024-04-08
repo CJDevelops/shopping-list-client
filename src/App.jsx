@@ -30,7 +30,7 @@ function App() {
     document.body.style.backgroundColor = savedColor;
     const tableElement = document.querySelector('.main-table'); 
     tableElement.classList.add('custom-table-bg'); 
-    document.documentElement.style.setProperty('--custom-bg-color', newColor);
+    document.documentElement.style.setProperty('--custom-bg-color', savedColor);
   }, []);
 
   const handleColorChange = (e) => {
