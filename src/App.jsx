@@ -41,7 +41,7 @@ function App() {
     document.body.style.backgroundColor = newColor;
   
     // Change the background color of Bootstrap table
-    const tableElement = document.querySelector('.table'); 
+    const tableElement = document.querySelector('.main-table'); 
     tableElement.classList.add('custom-table-bg'); 
     document.documentElement.style.setProperty('--custom-bg-color', newColor);
   };
@@ -55,7 +55,7 @@ function App() {
           <Form.Control className='ms-auto' type="color" id="exampleColorInput" defaultValue={bgColor} title="Choose your color" onChange={handleColorChange} />
           
         </Stack>
-        <Table borderless className="text-center align-middle">
+        <Table borderless className="main-table text-center align-middle">
           <tbody>
             {data.map(item => (
               <Entry key={item.item_id} item_id={item.item_id} item_name={item.item_name} purchased={item.purchased} fetchData={fetchData} />
