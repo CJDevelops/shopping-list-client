@@ -4,3 +4,7 @@
 body {
     margin-top: 25px;
 }
+
+.custom-table-bg {
+    background-color: var(--custom-bg-color) !important; 
+  }
