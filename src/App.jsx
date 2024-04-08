@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <Container>
+      <Container style={{ backgroundColor: bgColor }}>
         <Stack direction="horizontal" gap={3} style={{ display: 'flex' }}>
 
           <h1 className="text-center" style={{ flexGrow: 1 }}>Shopping List 🛒</h1>
