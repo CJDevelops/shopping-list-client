@@ -4,3 +4,7 @@
 body {
     margin-top: 25px;
 }
+
+table {
+    background-color: transparent;
+}
