@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    
+
     const savedColor = Cookies.get('bgColor') || '#212529';
     document.body.style.backgroundColor = savedColor;
     document.documentElement.style.setProperty('--bs-table-bg', savedColor);
@@ -41,7 +41,7 @@ function App() {
     document.body.style.backgroundColor = newColor;
   
     // Change the background color of Bootstrap table
-    document.documentElement.style.setProperty('--bs-table-bg', newColor);
+    document.getElementsByTagName('table')[0].style.backgroundColor = newColor;
   };
 
   return (
