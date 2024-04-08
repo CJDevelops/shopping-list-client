@@ -25,6 +25,12 @@ function App() {
 
   useEffect(() => {
     fetchData();
+    const savedColor = Cookies.get('bgColor') || '#212529';
+    document.body.style.backgroundColor = savedColor;
+    const table = document.querySelector('.table');
+    if (table) {
+      table.style.backgroundColor = savedColor;
+    }
   }, []);
 
   const handleColorChange = (e) => {
@@ -32,11 +38,20 @@ function App() {
     console.log(newColor);
     setBgColor(newColor);
     Cookies.set('bgColor', newColor);
+    
+    // Change the background color of the HTML body
+    document.body.style.backgroundColor = newColor;
+  
+    // Change the background color of Bootstrap table
+    const table = document.querySelector('.table');
+    if (table) {
+      table.style.backgroundColor = newColor;
+    }
   };
 
   return (
     <>
-      <Container style={{ backgroundColor: bgColor }}>
+      <Container>
         <Stack direction="horizontal" gap={3} style={{ display: 'flex' }}>
 
           <h1 className="text-center" style={{ flexGrow: 1 }}>Shopping List 🛒</h1>
