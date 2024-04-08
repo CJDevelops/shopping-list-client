@@ -41,7 +41,11 @@ function App() {
     document.body.style.backgroundColor = newColor;
   
     // Change the background color of Bootstrap table
-    document.documentElement.style.setProperty('--bs-table-bg', newColor, 'important');
+    // Find the table element (adjust the selector if needed)
+const tableElement = document.querySelector('.table');
+
+// Apply the style directly
+tableElement.style.backgroundColor = newColor;
   };
 
   return (
