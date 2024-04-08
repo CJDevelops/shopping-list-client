@@ -22,8 +22,8 @@ function Entry({ item_id, item_name, purchased, fetchData }) {
     return (
         <>
         {purchased == false ?
-            <tr className='.main-table'>
-                <td className='p-2 .main-table' >{item_name}</td>
+            <tr className='main-table'>
+                <td className='p-2 main-table' >{item_name}</td>
                 {/* <td ><Button variant='danger'><FontAwesomeIcon icon={faXmark} /></Button></td> */}
                 <td><Button onClick={handleRemove} variant='danger'>Remove</Button></td>
               </tr>
