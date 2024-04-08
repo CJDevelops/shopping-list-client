@@ -29,6 +29,7 @@ function App() {
 
   const handleColorChange = (e) => {
     const newColor = e.target.value;
+    console.log(newColor);
     setBgColor(newColor);
     Cookies.set('bgColor', newColor);
   };
