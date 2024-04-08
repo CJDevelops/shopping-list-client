@@ -9,6 +9,7 @@ import Entry from './Components/Entry';
 
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 
 function App() {
   const [data, setData] = useState([]);
@@ -26,6 +27,12 @@ function App() {
   return (
     <>
       <Container>
+      <Form.Control
+        type="color"
+        id="exampleColorInput"
+        defaultValue="#563d7c"
+        title="Choose your color"
+      />
         <h1 className="text-center">Shopping List 🛒</h1>
         <Table borderless className="text-center align-middle">
           <tbody>
